@@ -1,0 +1,4 @@
+本目录下包含的是：与redux有连接的组件,即组件里需要引用redux里的数据，创建一个与components里组件名相同的组件，不会污染UI组件。
+	引入redux，获取数据，然后再用props传给UI组件，这时UI组件之外就会包一层container.container里面封装的组件能够map到redux里面的数据。
+
+  Redux的组件则是由components部分与containers的映射

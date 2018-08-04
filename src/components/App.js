@@ -35,6 +35,9 @@ class App extends Component {
     tempArr[id] = 1;            
     this.setState({exArr: tempArr});         
   }
+  handle () {
+    console.log('lalala');
+  }
   render() {
     return (
       <Router>
@@ -71,7 +74,7 @@ class App extends Component {
             <div className="tab-item selected">
               <NavLink to="/bill" className="nav-link" onClick = { this.activateButton.bind(this, 2)
               }>
-                <img src={ (this.state.exArr)[2] ? bill1 : bill} alt="" className={(this.state.exArr)[2] ? "tab-logo-active":"tab-logo"}/> 
+                <img src={ (this.state.exArr)[2] ? bill1 : bill} alt="" className={(this.state.exArr)[2] ? "tab-logo-active":"tab-logo"} onClick={(this.state.exArr)[2] ? this.handle : ''}/> 
                 <span style={{display: (this.state.exArr)[2] ? 'none' : 'block'}} >账单</span>
               </NavLink>
             </div>

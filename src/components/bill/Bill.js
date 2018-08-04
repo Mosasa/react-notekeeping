@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Timeline } from 'antd';
+import Scroll from '../../common/scroll/Scroll';
 import './bill.styl'
 import bill from '../../assets/fonts/bill.png';
 import liwu from '../../assets/images/liwu.png';
@@ -7,8 +8,15 @@ import date from '../../assets/images/date.png';
 import pulldown from '../../assets/images/pulldowm.png';
 
 class Belongings extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      refreshScroll: true
+    }
+  }
   render() {
     return (
+      <Scroll refresh={this.state.refreshScroll}>
       <div className="app">
           <div className="gift">
             <img src={liwu} alt=""/>
@@ -32,8 +40,9 @@ class Belongings extends Component {
           <div className="date">
             <img src={date} alt=""/>
           </div>
-            
       </div>
+      </Scroll>
+
     )
   }
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+// import { Timeline } from 'antd';
 
 class Belongings extends Component {
   render() {
     return (
-      <div>Belongings</div>
+      <div className="app"></div>
     )
   }
 }

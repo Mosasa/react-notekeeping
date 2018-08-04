@@ -26,14 +26,14 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      markArray: [0, 0, 0, 0, 0],
+      exArr: [0, 0, 0, 0, 0],
     }
   };
   activateButton(id) {  
     //根据参数id，来确定激活五个tab中的哪一个          
-    let tmpMarkArray = [0, 0, 0, 0, 0]             
-    tmpMarkArray[id] = 1;            
-    this.setState({markArray: tmpMarkArray});         
+    let tempArr = [0, 0, 0, 0, 0]             
+    tempArr[id] = 1;            
+    this.setState({exArr: tempArr});         
   }
   render() {
     return (
@@ -57,35 +57,35 @@ class App extends Component {
             <div className="tab-item">
               <NavLink to="/belongings" className="nav-link" onClick = { this.activateButton.bind(this, 0)
               }>
-                <img src={ (this.state.markArray)[0] ? belongings1 : belongings } alt="" className="tab-logo"/> 
+                <img src={ (this.state.exArr)[0] ? belongings1 : belongings } alt="" className="tab-logo"/> 
                 <span>资产</span>
               </NavLink>
             </div>
             <div className="tab-item">
               <NavLink to="/report" className="nav-link" onClick = { this.activateButton.bind(this, 1)
               }>
-                <img src={ (this.state.markArray)[1] ? report1 : report } alt="" className="tab-logo" /> 
+                <img src={ (this.state.exArr)[1] ? report1 : report } alt="" className="tab-logo" /> 
                 <span >报表</span>
               </NavLink>
             </div>
             <div className="tab-item selected">
               <NavLink to="/bill" className="nav-link" onClick = { this.activateButton.bind(this, 2)
               }>
-                <img src={ (this.state.markArray)[2] ? bill1 : bill} alt="" className={(this.state.markArray)[2] ? "tab-logo-active":"tab-logo"}/> 
-                <span style={{display: (this.state.markArray)[2] ? 'none' : 'block'}} className="bill">账单</span>
+                <img src={ (this.state.exArr)[2] ? bill1 : bill} alt="" className={(this.state.exArr)[2] ? "tab-logo-active":"tab-logo"}/> 
+                <span style={{display: (this.state.exArr)[2] ? 'none' : 'block'}} >账单</span>
               </NavLink>
             </div>
             <div className="tab-item">
               <NavLink to="/manageFinances" className="nav-link" onClick = { this.activateButton.bind(this, 3)
               }>
-                <img src={ (this.state.markArray)[3] ? manageFinances1 : manageFinances } alt="" className="tab-logo"/> 
+                <img src={ (this.state.exArr)[3] ? manageFinances1 : manageFinances } alt="" className="tab-logo"/> 
                 <span>理财</span>
               </NavLink>
             </div>
             <div className="tab-item">
               <NavLink to="/more" className="nav-link" onClick = { this.activateButton.bind(this, 4)
               }>
-                <img src={ (this.state.markArray)[4] ? more1 : more } alt="" className="tab-logo"/> 
+                <img src={ (this.state.exArr)[4] ? more1 : more } alt="" className="tab-logo"/> 
                 <span>更多</span>
               </NavLink>
             </div>

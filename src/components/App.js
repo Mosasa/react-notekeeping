@@ -4,7 +4,7 @@ import Belongings from './belongings/Belongings';
 import Report from './report/Report';
 import ManageFinances from './manageFinances/ManageFinances';
 import More from './more/More';
-import { BrowserRouter as Router, Route, Switch, Redirect, NavLink } from 'react-router-dom'//as 将BrowserRouter用router替代
+import { BrowserRouter as Router, Route, Switch, Redirect, NavLink} from 'react-router-dom'//as 将BrowserRouter用router替代
 // import '../assets/stylus/reset.styl';
 // import '../assets/stylus/font.styl';
 
@@ -37,6 +37,7 @@ class App extends Component {
   }
   handle () {
     console.log('lalala');
+    window.location.href= './belongings'
   }
   render() {
     return (
@@ -74,7 +75,7 @@ class App extends Component {
             <div className="tab-item selected">
               <NavLink to="/bill" className="nav-link" onClick = { this.activateButton.bind(this, 2)
               }>
-                <img src={ (this.state.exArr)[2] ? bill1 : bill} alt="" className={(this.state.exArr)[2] ? "tab-logo-active":"tab-logo"} onClick={(this.state.exArr)[2] ? this.handle : ''}/> 
+                <img src={ (this.state.exArr)[2] ? bill1 : bill} alt="" className={(this.state.exArr)[2] ? "tab-logo-active":"tab-logo"} onClick={(this.state.exArr)[2] ? this.handle.bind(this) : '' } />
                 <span style={{display: (this.state.exArr)[2] ? 'none' : 'block'}} >账单</span>
               </NavLink>
             </div>
